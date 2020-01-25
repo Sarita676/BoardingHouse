@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Bootstrap Tutorial</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="Style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			font-family: 'Josefin Sans', sans-serif;
+		}
+
+		/* Make the image fully responsive */
+		.carousel-inner img {
+			width: 100%;
+
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Contact form -->
+	<section>
+		<div class="container mb-5">
+			<h1 class="text-center text-capitalize pt-5">Register Your House</h1>
+			<hr class="w-25 mx-auto pt-5">
+
+			<div class="w-50 mx-auto">
+				<form action="registerhouse.php" method:"post">
+					<div class="form-group">
+						<label for="name">Name of the House Owner:</label>
+						<input type="textbox" class="form-control" placeholder="Enter name of the house owner here" id="name" name = "name"
+							autocomplete="off">
+					</div>
+					<div class="form-group">
+						<label for="email">Email Address</label>
+						<input type="email" class="form-control" placeholder="Enter email address" id="email" name = "email">
+					</div>
+
+					<div class="form-group">
+						<label for="No">Mobile Number</label>
+						<input type="number" class="form-control" placeholder="Enter mobile number" id="No" name = "contact">
+					</div>
+
+					<div class="form-group">
+						<label for="img">Citizenship</label><br />
+
+
+						<style media="screen">
+							#custom-button {
+								padding: 10px;
+								color: black;
+								background-color: #c1bdbc;
+								border: 1px solid #000;
+								border-radius: 5px;
+								cursor: pointer;
+							}
+
+							#custom-button:hover {
+								background-color: #00b28f;
+							}
+
+							#custom-text {
+								margin-left: 10px;
+								font-family: sans-serif;
+								color: #AAA;
+							}
+						</style>
+						<input type="file" id="real-file" name = "citizenship" hidden="hidden" />
+						<span id="custom-text" placeholder="">No File Chosen Yet</span>
+						<button type="button" id="custom-button">Upload from Computer</button>
+
+						<script type="text/javascript">
+							const realFileBtn = document.getElementById("real-file");
+							const customBtn = document.getElementById("custom-button");
+							const customTxt = document.getElementById("custom-text");
+
+							customBtn.addEventListener("click", function () {
+								realFileBtn.click();
+							});
+
+							realFileBtn.addEventListener("change", function () {
+								if (realFileBtn.value) {
+									customTxt.innerHTML = realFileBtn.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+								} else {
+									customTxt.innerHTML = "No File Chosen, yet.";
+								}
+							});
+
+						</script>
+					</div>
+
+					<div class="form-group">
+						<label for="No">Province</label>
+						<input type="number" class="form-control" placeholder="Province no." id="No" name = "province">
+					</div>
+					<div class="form-group">
+						<label for="name">Zone:</label>
+						<input type="textbox" class="form-control" placeholder="Zone?" id="name" name = "zone">
+					</div>
+					<div class="form-group">
+						<label for="name">District:</label>
+						<input type="textbox" class="form-control" placeholder="District?" id="text" name="district">
+					</div>
+					
+					<div class="form-group form-check">
+						<label class="form-check-label">
+							<input class="form-check-input" type="checkbox"> Remember me
+						</label>
+					</div>
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+			</div>
+		</div>
+	</section>
+	<!-- footer -->
+	<footer class="text-center bg-dark text-white">
+		<p class="pt-2 pb-2">@Copyright The Boarding House.com 2020</p>
+	</footer>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<!-- <script type="text/javascript">
+
+	function handleClick(element){
+		element.style="color:white";
+	element.style= "background-color: green";
+}
+
+</script>
+ -->
+
+</html>
